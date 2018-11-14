@@ -7,25 +7,23 @@ highlighter: rouge
 markdown: kramdown
 disqus: cloud tool chain
 google_analytics: cloud tool chain
-title: cloud tool chain
+title: CLOUD TOOL CHAIN
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: cloud tool chain
+      title: CLOUD TOOL CHAIN
 
 description: DevOps Centered Blog
 author:
-  name: cloud tool chain
+  name: Cloud Tool Chain
   email: kurt.riddell@gmail.com
   github: phi482/cloudtoolchain
   twitter: cloudtoolchain
-  pinterest: asd123
-  linkedin: Kurt Riddell
+  linkedin: kurt-riddell-4202124
   bio: DevOps Centered Blog
-  email_md5: 726351295ec82e145928582f595aa3aa
 
 rss_path: feed.xml
 categories_path: categories.html
