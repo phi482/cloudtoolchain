@@ -1,0 +1,40 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
+markdown: kramdown
+disqus: cloud tool chain
+google_analytics: cloud tool chain
+title: cloud tool chain
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: cloud tool chain
+
+description: DevOps Centered Blog
+author:
+  name: cloud tool chain
+  email: kurt.riddell@gmail.com
+  github: phi482/cloudtoolchain
+  twitter: cloudtoolchain
+  pinterest: asd123
+  linkedin: Kurt Riddell
+  bio: DevOps Centered Blog
+  email_md5: 726351295ec82e145928582f595aa3aa
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+# sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
+
+BASE_PATH:
+
+plugins:
+  - jekyll-paginate
