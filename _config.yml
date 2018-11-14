@@ -7,14 +7,14 @@ highlighter: rouge
 markdown: kramdown
 disqus: cloud tool chain
 google_analytics: cloud tool chain
-title: CLOUD TOOL CHAIN
+title:
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: CLOUD TOOL CHAIN
+      title: Cloud Tool Chain
 
 description: DevOps Centered Blog
 author:
