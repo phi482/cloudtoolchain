@@ -7,6 +7,70 @@
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Automated Provisioning Part 3</title>
+				<description>&lt;p&gt;The Orchestrator workflow that was kicked off in the previous post will install and bootstrap the chef client.  The validator certificate is included in the Windows template so it is available for each client install.  The script we use is as follows:&lt;/p&gt;
+
+&lt;p&gt;I use two main cookbooks to configure the web and sql servers.&lt;/p&gt;
+
+&lt;p&gt;The web cookbook will install all the roles and features required to run IIS and sets up the Inetpub folder structure.  The sql cookbook will install SQL.  The configuration.ini is build using attributes.  Each cookbook is in a seperate role which contains a base cookbook which every server gets and dns cookbook which sets up the dns for each of the api’s being deployed.  The Octopus tenticle is installed by Chef Client on each of the servers.&lt;/p&gt;
+
+&lt;p&gt;Octopus then downloads the code and configures IIS.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 11 Jan 2019 00:00:00 -0500</pubDate>
+				<link>/vrealize/chef/automation/2019/01/11/Automated-Provisioning-Part-3.html</link>
+				<guid isPermaLink="true">/vrealize/chef/automation/2019/01/11/Automated-Provisioning-Part-3.html</guid>
+			</item>
+		
+			<item>
+				<title>Automated Provisioning Part 2</title>
+				<description>&lt;p&gt;vRealize Automation was unable to complete the builds on its own so I needed to be able to run Orchestrator workflows as well.  The way to trigger orchestrator workflows from vRealize Automation is through the use of the Event Broker servers, or Subscriptions.&lt;/p&gt;
+
+&lt;p&gt;Subscriptions live under the Administration tab and then Events.  Select Subscriptions.&lt;/p&gt;
+
+&lt;p&gt;To create a new subscription, click on New&lt;/p&gt;
+
+&lt;p&gt;Click All of the&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data - Lifecycle State - MachineProvision&lt;/li&gt;
+  &lt;li&gt;Data - Lifecycle  - PRE&lt;/li&gt;
+  &lt;li&gt;Enter manually in the field “Data~Machine~Properties~SomeProperty”
+    &lt;ul&gt;
+      &lt;li&gt;Must use the ~ between each level&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Click Next and select the workflow to execute&lt;/p&gt;
+
+&lt;p&gt;Click Next and select Blocking or not.  You cannot adjust this setting one saved.  Blocking means that the vRealize Automation build will halt until it receives a response from Orchestrator or hits the time out.&lt;/p&gt;
+
+&lt;p&gt;Click Save and then Publish.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 10 Jan 2019 00:00:00 -0500</pubDate>
+				<link>/vrealize/orchestrator/automation/2019/01/10/Automated-Provisioning-Part-2.html</link>
+				<guid isPermaLink="true">/vrealize/orchestrator/automation/2019/01/10/Automated-Provisioning-Part-2.html</guid>
+			</item>
+		
+			<item>
+				<title>Automated Provisioning Part 1</title>
+				<description>&lt;p&gt;This time last year our organization was in desperate need to quickly spin up a virtual environment as we were developing a new application.  We were already heavily invested in VMware and owned licensing for vRealize Automation.  I told our team I had part of the solution but it would be a total team effort to get this working.  We needed a web server and a SQL server.  It needed to tie into our code deployment tool, Octopus, and several other internal systems.  It also had to stand a lone and not impact the other development servers.&lt;/p&gt;
+
+&lt;p&gt;We enlisted a vendor to get stated and we came up with a three tier solution.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;vRealize Automation would be the request portal and create the virtual machines&lt;/li&gt;
+  &lt;li&gt;Chef would manage the configurations for the 2 Windows servers&lt;/li&gt;
+  &lt;li&gt;Octopus Delploy would deploy all of the code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The next parts of this series will go into detail for each tier and how they all tie together.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 19 Dec 2018 00:00:00 -0500</pubDate>
+				<link>/vrealize/chef/automation/2018/12/19/Automated-Provisioning-Part-1.html</link>
+				<guid isPermaLink="true">/vrealize/chef/automation/2018/12/19/Automated-Provisioning-Part-1.html</guid>
+			</item>
+		
+			<item>
 				<title>Welcome!</title>
 				<description>&lt;p&gt;Cloud Tool Chain is a blog dedicated to documenting the tools I am using to get my company cloud-ready.  I plan to talk about the private cloud we are creating, a data center migration, and eventually moving workloads to the public cloud.&lt;/p&gt;
 

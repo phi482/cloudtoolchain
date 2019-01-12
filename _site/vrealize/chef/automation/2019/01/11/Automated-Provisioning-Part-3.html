@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Tags</title>
+	<title>Automated Provisioning Part 3</title>
 	
 	<meta name="author" content="Cloud Tool Chain">
 
@@ -149,62 +149,139 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>Tags </h1>
+  <h1>Automated Provisioning Part 3 </h1>
 </div>
+	
+<article>
 
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   January 
+	   11th,
+	   
+	   2019
+	 </span>
+	  <div class="article_body">
+	  <p>The Orchestrator workflow that was kicked off in the previous post will install and bootstrap the chef client.  The validator certificate is included in the Windows template so it is available for each client install.  The script we use is as follows:</p>
 
+<p>I use two main cookbooks to configure the web and sql servers.</p>
 
+<p>The web cookbook will install all the roles and features required to run IIS and sets up the Inetpub folder structure.  The sql cookbook will install SQL.  The configuration.ini is build using attributes.  Each cookbook is in a seperate role which contains a base cookbook which every server gets and dns cookbook which sets up the dns for each of the api’s being deployed.  The Octopus tenticle is installed by Chef Client on each of the servers.</p>
 
+<p>Octopus then downloads the code and configures IIS.</p>
 
-<div class="col-sm-3 col-xs-6">
-    <ul class="nav nav-tabs-vertical cat-tag-menu">
-    
-      
-      <li>
-          <a href="#automation-ref">
-            automation<span class="badge pull-right">3</span>
-         </a>
-      </li>
-   
-      
-      <li>
-          <a href="#general-ref">
-            general<span class="badge pull-right">1</span>
-         </a>
-      </li>
-   
-   </ul>
-</div>
-<!-- Tab panes -->
-<div class="tab-content col-sm-9 col-xs-6">
-  
-    
-    <div class="tab-pane" id="automation-ref">
-      <h2 style="margin-top: 0px">Posts tagged  with automation</h2>
-      <ul class="list-unstyled">
-        
-          <li style="line-height: 35px;"><a href="/vrealize/chef/automation/2019/01/11/Automated-Provisioning-Part-3.html">Automated Provisioning Part 3</a> <span class="text-muted">- January 11, 2019</span></li>
-        
-          <li style="line-height: 35px;"><a href="/vrealize/orchestrator/automation/2019/01/10/Automated-Provisioning-Part-2.html">Automated Provisioning Part 2</a> <span class="text-muted">- January 10, 2019</span></li>
-        
-          <li style="line-height: 35px;"><a href="/vrealize/chef/automation/2018/12/19/Automated-Provisioning-Part-1.html">Automated Provisioning Part 1</a> <span class="text-muted">- December 19, 2018</span></li>
-        
-      </ul>
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#vrealize-ref">
+					vrealize <span>(3)</span>
+					,
+				</a></li>
+			 
+				<li><a href="/categories.html#chef-ref">
+					chef <span>(2)</span>
+					,
+				</a></li>
+			 
+				<li><a href="/categories.html#automation-ref">
+					automation <span>(3)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#automation-ref">
+					automation <span>(3)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Automated Provisioning Part 3&via=cloudtoolchain"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="//www.gravatar.com/avatar/" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Cloud Tool Chain</h4>
+        <p class="author-bio">DevOps Centered Blog</p>
+      </section>
     </div>
-  
-    
-    <div class="tab-pane" id="general-ref">
-      <h2 style="margin-top: 0px">Posts tagged  with general</h2>
-      <ul class="list-unstyled">
-        
-          <li style="line-height: 35px;"><a href="/general/welcome/2018/11/13/About-Me.html">Welcome!</a> <span class="text-muted">- November 13, 2018</span></li>
-        
-      </ul>
-    </div>
-  
-</div>
 
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/vrealize/orchestrator/automation/2019/01/10/Automated-Provisioning-Part-2.html" title="Automated Provisioning Part 2">&larr; Previous</a></li>
+		  
+		  
+			<li class="next disabled"><a>Next &rarr;</a>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
 <div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'cloud tool chain';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
 
 

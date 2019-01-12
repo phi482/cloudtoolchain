@@ -158,6 +158,115 @@
 
   <span class="post-date">
     
+    January
+    11th,
+    
+    2019
+  </span>
+
+  <h2>
+    <a href="/vrealize/chef/automation/2019/01/11/Automated-Provisioning-Part-3.html">Automated Provisioning Part 3</a>
+  </h2>
+
+  <div>
+    
+    <p>The Orchestrator workflow that was kicked off in the previous post will install and bootstrap the chef client.  The validator certificate is included in the Windows template so it is available for each client install.  The script we use is as follows:</p>
+
+<p>I use two main cookbooks to configure the web and sql servers.</p>
+
+<p>The web cookbook will install all the roles and features required to run IIS and sets up the Inetpub folder structure.  The sql cookbook will install SQL.  The configuration.ini is build using attributes.  Each cookbook is in a seperate role which contains a base cookbook which every server gets and dns cookbook which sets up the dns for each of the api’s being deployed.  The Octopus tenticle is installed by Chef Client on each of the servers.</p>
+
+<p>Octopus then downloads the code and configures IIS.</p>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
+    January
+    10th,
+    
+    2019
+  </span>
+
+  <h2>
+    <a href="/vrealize/orchestrator/automation/2019/01/10/Automated-Provisioning-Part-2.html">Automated Provisioning Part 2</a>
+  </h2>
+
+  <div>
+    
+    <p>vRealize Automation was unable to complete the builds on its own so I needed to be able to run Orchestrator workflows as well.  The way to trigger orchestrator workflows from vRealize Automation is through the use of the Event Broker servers, or Subscriptions.</p>
+
+<p>Subscriptions live under the Administration tab and then Events.  Select Subscriptions.</p>
+
+<p>To create a new subscription, click on New</p>
+
+<p>Click All of the</p>
+
+<ul>
+  <li>Data - Lifecycle State - MachineProvision</li>
+  <li>Data - Lifecycle  - PRE</li>
+  <li>Enter manually in the field “Data~Machine~Properties~SomeProperty”
+    <ul>
+      <li>Must use the ~ between each level</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Click Next and select the workflow to execute</p>
+
+<p>Click Next and select Blocking or not.  You cannot adjust this setting one saved.  Blocking means that the vRealize Automation build will halt until it receives a response from Orchestrator or hits the time out.</p>
+
+<p>Click Save and then Publish.</p>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
+    December
+    19th,
+    
+    2018
+  </span>
+
+  <h2>
+    <a href="/vrealize/chef/automation/2018/12/19/Automated-Provisioning-Part-1.html">Automated Provisioning Part 1</a>
+  </h2>
+
+  <div>
+    
+    <p>This time last year our organization was in desperate need to quickly spin up a virtual environment as we were developing a new application.  We were already heavily invested in VMware and owned licensing for vRealize Automation.  I told our team I had part of the solution but it would be a total team effort to get this working.  We needed a web server and a SQL server.  It needed to tie into our code deployment tool, Octopus, and several other internal systems.  It also had to stand a lone and not impact the other development servers.</p>
+
+<p>We enlisted a vendor to get stated and we came up with a three tier solution.</p>
+<ul>
+  <li>vRealize Automation would be the request portal and create the virtual machines</li>
+  <li>Chef would manage the configurations for the 2 Windows servers</li>
+  <li>Octopus Delploy would deploy all of the code</li>
+</ul>
+
+<p>The next parts of this series will go into detail for each tier and how they all tie together.</p>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
     November
     13th,
     
@@ -209,7 +318,7 @@
 		<footer>
 			<hr/>
 			<p>
-				&copy; 2018 Cloud Tool Chain with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+				&copy; 2019 Cloud Tool Chain with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
 			</p>
 		</footer>
 	</div>
